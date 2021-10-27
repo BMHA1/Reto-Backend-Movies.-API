@@ -1,0 +1,1 @@
+const metodos=require('./funciones')
