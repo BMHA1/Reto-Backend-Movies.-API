@@ -1,31 +1,9 @@
-
-
-
-
-module.exports.arrayPelicula = [
-    {
-        id: 01,
-        nombre: 'Rey Leon',
-        genero: ['animacion', 'accion']
-    },
-    {
-        id: 02,
-        nombre: 'Pinocho',
-        genero: ['animacion', 'accion']
-    },
-    {
-        id: 03,
-        nombre: 'La sirenita',
-        genero: ['animacion', 'accion']
-    },
-    {
-        id: 04,
-        nombre: 'Rey leon',
-        genero: ['animacion', 'accion']
-    },
-    {
-        id: 05,
-        nombre: 'Harry potter ',
-        genero: ['animacion', 'accion']
-    }
-]
+const mongoose = requiere('mongoose');
+const EsquemaPelicula= new mongoose.Schema({
+    titulo:{type:String, require},
+    director:{type:String, },
+    genero:{type:String, },
+    duracion:{type:String, },
+    actores:{type:String},
+})
+module.exports=mongoose.model('Movie', EsquemaPelicula)

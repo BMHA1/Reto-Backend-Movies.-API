@@ -36,18 +36,29 @@ const arrayPelicula = [
 ]
 
 app.get('/peliculas', (req, res) => {
-    buscarTitle=(contenido)=>{
-        let mostradorTitulos=[]
-        contenido.forEach( element =>{ mostradorTitulos.push(element.nombre)})
-         return mostradorTitulos   
+
+    // const buscartodosTitle = (contenido) => {
+    //     let mostradorTitulos = []
+    //     contenido.forEach(element => { mostradorTitulos.push(element.nombre)})
+    //     return mostradorTitulos
+    // }
+    // let result = buscartodosTitle(arrayPelicula)
+
+    const onlytitle= (contenido) => {
+      let  titulo2 = arrayPelicula.filter(({nombre}) => nombre.includes(contenido))
+        return titulo2
     }
 
-    let result=buscarTitle(arrayPelicula)
+    let titulo =onlytitle(req.query.buscadortitulo)
 
-    res.json({ todas_las_pelicula: result})
+     res.json({ El_titulo: titulo })
+    // else res.json({ todas_las_pelicula: result })
+
+
+
 })
 
-app.get('/peliculas/:id')
+
 
 
 
