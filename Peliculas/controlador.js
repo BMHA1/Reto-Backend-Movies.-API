@@ -15,13 +15,14 @@ module.exports.buscarPeliculas = async (req, res) => {
     }
 }
 
+
+
+
+
 module.exports.buscarPelicula=async( req,res)=>{
      const  peticionPelicula = req.params.id 
-     
-
-     
-     
-}
+     res.json({id: {_id:peticionPelicula}})     
+ }
 
 
 
