@@ -14,6 +14,6 @@ const controlador = require('./controlador')
 
 router.post('/',  controlador.añadir ) // buscar pelicula mediante un id (posición del array) vamos a utilizar query params para 
 // Endpoint busqueda//
-router.get('/',  controlador.buscarPelicula ) // buscar pelicula mediante un id (posición del array) vamos a utilizar query params para 
+router.get('/',  controlador.buscarPeliculas ) // buscar pelicula mediante un id (posición del array) vamos a utilizar query params para 
 
 module.exports=router;
