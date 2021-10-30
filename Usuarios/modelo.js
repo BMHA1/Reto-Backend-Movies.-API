@@ -18,6 +18,6 @@ const EsquemaPersona = new mongoose.Schema({
         type: String,
         minlength: 8
     },
-    
+
 })
 module.exports = mongoose.model('Usario', EsquemaPersona)
