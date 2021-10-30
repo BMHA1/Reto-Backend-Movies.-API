@@ -11,18 +11,23 @@ module.exports.buscarPeliculas = async (req, res) => {
         res.json({ data: filtrado })
     } else {
         const todasLasPeliculas = await Datapeliculas.find()
-        res.json({ todas: todasLasPeliculas })
+        res.json({ data: todasLasPeliculas })
     }
 }
+
 module.exports.buscarPelicula = async (req, res) => {
      const peticionPelicula =  Datapeliculas.find({ _id:req.params.id})
-    res.json({ id:peticionPelicula})
+    res.json({data:peticionPelicula})
 }
 // añadir peliculas
 module.exports.añadir = async (req, res) => {
     const pelicula = new Datapeliculas(req.body)
     await pelicula.save()
     res.json({ data: pelicula })
+}
+
+module.exports.eliminar=async(req, res)=>{
+    const eliminarPelicula= Datapeliculas.findOneAndDelete
 }
 
 

@@ -6,4 +6,4 @@ const EsquemaPelicula= new mongoose.Schema({
     duracion:{type:Number},
     actores:[{type:String},{type:String},{type:String}],
 })
-module.exports=mongoose.model('Movie', EsquemaPelicula)
+module.exports=mongoose.model('Movies', EsquemaPelicula)

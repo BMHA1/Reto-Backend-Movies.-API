@@ -1,1 +1,1 @@
-const data=require('.modell/')
+// const data=require('.modell/')
