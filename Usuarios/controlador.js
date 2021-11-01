@@ -43,3 +43,17 @@ module.exports.login = async (req, res) => {
     })
   }
 }
+//modificar usuario
+module.exports.modificarNombre = async (req, res){
+  try {
+    const modificarUsuario = await Datausuario.find({ _id: req.params.id })
+    if (modificarUsuario !== null) {
+      modificarUsuario.nombre = req.body
+    }
+    await modificarUsuario.save()
+    res.send(`el nombre ha sido cambiado por: ${modificarUsuario.nombre}`)
+  } catch (error) {
+    res.send({ mensaje: `Lo siento ha ocurrido un error de ${error}` })
+  }
+
+}
