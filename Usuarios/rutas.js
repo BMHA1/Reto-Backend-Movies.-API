@@ -6,7 +6,8 @@ const controlador = require('./controlador')
 router.post('/alta',  controlador.crearUsuario ) // buscar pelicula mediante un id (posición del array) vamos a utilizar query params para 
 router.post ('/login', controlador.login)
 router.get('/:id',  controlador.buscarUsuarios ) // buscar pelicula mediante un id (posición del array) vamos a utilizar query params para 
-rotuter.put('/:id', controlador.modificarNombre)//buscar y cambiar
+router.put('/:id', controlador.cambiarNombre)
 
 
 module.exports=router;
+

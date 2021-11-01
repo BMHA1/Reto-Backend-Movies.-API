@@ -5,6 +5,7 @@ const metodo = require('./funciones')
 
 //creamo Usuario
 module.exports.crearUsuario = async (req, res) => {
+
   try {
     const altaUsuario = new Datausuario(req.body)
     altaUsuario.rol = 'usuario'
@@ -33,7 +34,7 @@ module.exports.login = async (req, res) => {
     if (comprobracionEmail === null || !comprobacionContrasenia) {
       res.send({ mensaje: 'Error, tu email o conrtraseña son incorrectos,vete a la mierda' })
     } else {
-      res.json({ data: metodo.crearToken(comprobracionEmail) })
+      // res.json({ data: metodo.crearToken(comprobracionEmail) })
     }
     res.json({ data: 'acceso permitido' })
 
@@ -43,17 +44,12 @@ module.exports.login = async (req, res) => {
     })
   }
 }
-//modificar usuario
-module.exports.modificarNombre = async (req, res){
+// buscar usurario
+module.exports.cambiarNombre = async (req, res) => {
   try {
-    const modificarUsuario = await Datausuario.find({ _id: req.params.id })
-    if (modificarUsuario !== null) {
-      modificarUsuario.nombre = req.body
-    }
-    await modificarUsuario.save()
-    res.send(`el nombre ha sido cambiado por: ${modificarUsuario.nombre}`)
+    const cambiarId = await Datausuario.findOneAndUpdate({ _id: req.params.id },{nombre:req.body.nombre})
+    res.send('el nombre se ha cambiado perfectamente por:'+' '+ req.body.nombre)
   } catch (error) {
-    res.send({ mensaje: `Lo siento ha ocurrido un error de ${error}` })
+    res.send({ mensaje: `Lo siento ha ocurrido un error de ${error}`})
   }
-
 }

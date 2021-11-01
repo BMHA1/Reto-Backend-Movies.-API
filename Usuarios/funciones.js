@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken")
 const moment = require("moment")
-// const dotenv = require('dotenv').config()
+
 
 module.exports.crearHash = (password) => {
     let encriptada = bcrypt.hashSync(password, 10)
@@ -18,6 +18,5 @@ module.exports.crearToken = (usuario) => {
         iat: moment().unix(),
         exp: moment().add(14, 'days').unix()
     }
-
     return jwt.sign(payload, process.env.TOKEN)
 }

@@ -1,5 +1,6 @@
 const express = require('express')//requerimo un module de express
 const mongoose = require('mongoose')
+const dotenv = require('dotenv').config()
 const app = express();
 const rutasPeliculas = require('./Peliculas/rutas')
 const rutasUsuario = require('./Usuarios/rutas')
@@ -15,7 +16,8 @@ mongoose.connect('mongodb://localhost:27017/backend_netflix', {
 
 app.use('/usuario', rutasUsuario)
 app.use('/peliculas', rutasPeliculas)
-app.listen(process.env.PORT, () => console.log('servidor levantado en puerto'))
+app.listen(process.env.PORT, () => console.log('funcionando'))
+
 
 
 
