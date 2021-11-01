@@ -44,7 +44,7 @@ module.exports.login = async (req, res) => {
     })
   }
 }
-// buscar usurario
+//cambiar usurario
 module.exports.cambiarNombre = async (req, res) => {
   try {
     const cambiarId = await Datausuario.findOneAndUpdate({ _id: req.params.id },{nombre:req.body.nombre})
