@@ -24,7 +24,6 @@ module.exports.buscarUsuarios = async (req, res) => {
     res.send({ mensaje: `Lo siento ha ocurrido un error de ${error}` })
   }
 }
-
 // login Usuario
 module.exports.login = async (req, res) => {
   try {
@@ -33,6 +32,8 @@ module.exports.login = async (req, res) => {
     const comprobacionContrasenia = metodo.compararHash(req.body.contrasenia, comprobracionEmail.contrasenia)
     if (comprobracionEmail === null || !comprobacionContrasenia) {
       res.send({ mensaje: 'Error, tu email o conrtraseña son incorrectos,vete a la mierda' })
+    } else {
+      res.json({ data: metodo.crearToken(comprobracionEmail) })
     }
     res.json({ data: 'acceso permitido' })
 
