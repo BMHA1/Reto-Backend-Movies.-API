@@ -17,7 +17,6 @@ mongoose.connect('mongodb://localhost:27017/backend_netflix', {
 app.use('/usuario', rutasUsuario)
 app.use('/peliculas', rutasPeliculas)
 app.listen(process.env.PORT, () => console.log('funcionando'))
-
-
+console.log(process.env.PORT)
 
 

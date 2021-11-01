@@ -18,5 +18,5 @@ module.exports.crearToken = (usuario) => {
         iat: moment().unix(),
         exp: moment().add(14, 'days').unix()
     }
-    return jwt.sign(payload, process.env.TOKEN)
+    return jwt.sign(payload, process.env.PORT)
 }

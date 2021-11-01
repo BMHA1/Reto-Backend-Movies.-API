@@ -1,8 +1,6 @@
 const Datausuario = require('./modelo.js')
 const metodo = require('./funciones')
 
-
-
 //creamo Usuario
 module.exports.crearUsuario = async (req, res) => {
 
@@ -12,7 +10,7 @@ module.exports.crearUsuario = async (req, res) => {
     await altaUsuario.save()
     res.json({ mensaje: 'Enhora buena, ya puedes ver nuestras peliculas' })
   } catch (error) {
-    res.send({ mensaje: `Lo siento ha ocurrido un error de ${error}` })
+    res.send({ mensaje: `Lo siento ha ocurrido un error de ${error}`})
   }
 }
 //buscamos Usuario 
@@ -34,9 +32,10 @@ module.exports.login = async (req, res) => {
     if (comprobracionEmail === null || !comprobacionContrasenia) {
       res.send({ mensaje: 'Error, tu email o conrtraseña son incorrectos,vete a la mierda' })
     } else {
-      // res.json({ data: metodo.crearToken(comprobracionEmail) })
+      res.json({ data: metodo.crearToken(comprobracionEmail) })
+      
     }
-    res.json({ data: 'acceso permitido' })
+
 
   } catch (error) {
     res.send({
@@ -47,9 +46,14 @@ module.exports.login = async (req, res) => {
 //cambiar usurario
 module.exports.cambiarNombre = async (req, res) => {
   try {
-    const cambiarId = await Datausuario.findOneAndUpdate({ _id: req.params.id },{nombre:req.body.nombre})
-    res.send('el nombre se ha cambiado perfectamente por:'+' '+ req.body.nombre)
+    await Datausuario.findOneAndUpdate({ _id: req.params.id }, { nombre: req.body.nombre })
+    res.send('el nombre se ha cambiado perfectamente por:' + ' ' + req.body.nombre)
   } catch (error) {
-    res.send({ mensaje: `Lo siento ha ocurrido un error de ${error}`})
+    res.send({ mensaje: `Lo siento ha ocurrido un error de ${error}` })
   }
+}
+//eliminar usuario
+module.exports.eliminarUsuario = async (req, res) => {
+  const eliminar = await Datausuario.findOneAndDelete({ _id: req.params.id })
+  res.json({ data: eliminar.nombre })
 }

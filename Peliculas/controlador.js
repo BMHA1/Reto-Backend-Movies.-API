@@ -14,7 +14,7 @@ module.exports.buscarPeliculas = async (req, res) => {
         res.json({ data: todasLasPeliculas })
     }
 }
-
+//busqueda por id
 module.exports.buscarPelicula = async (req, res) => {
     const peticionPelicula = await Datapeliculas.find({_id:req.params.id })
     res.json({ data: peticionPelicula })
@@ -25,7 +25,7 @@ module.exports.añadir = async (req, res) => {
     await pelicula.save()
     res.json({ data: pelicula })
 }
-
+//eliminar peliculas
 module.exports.eliminarPelicula = async (req, res) => {
     const eliminar = await Datapeliculas.findOneAndDelete({_id:req.params.id})
     res.json({data:eliminar.titulo})
