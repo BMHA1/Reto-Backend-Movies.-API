@@ -1,5 +1,5 @@
 # Reto-Backend-API-Movies 🚀
-***
+
 Elaboracion de una API, que simula los principios de NETFLIX donde un usuario tiene un conjunto de peliculas y puede alquilarlas por un tiempo determinado, la API tiene arquitectura RestFULL y está desarrollada con las siguientes tecngologías:
 
   * Node.js: Entorno de ejecución multiplataforma  
@@ -23,8 +23,8 @@ su estructura y manipularlo, he utilizado un O.D.M (Robo3t-1.4)  la ruta de la b
 
 ***
 
-## Estrutura de carpetas
-***
+## EndPoints
+
             ├───Api_servidor
             ├───Usuario 
                 ├──Rutas
@@ -41,7 +41,7 @@ su estructura y manipularlo, he utilizado un O.D.M (Robo3t-1.4)  la ruta de la b
 
 ***
 ## Autenticación
-***
+
  Para la Autenticación del usuario, he utilizado dos librerias: 
     
 * Bcrypt: Es una librería que permite aumentar la privacidad y la seguridad ya que puedes convetir la contraseña de texto plano
@@ -52,7 +52,7 @@ su estructura y manipularlo, he utilizado un O.D.M (Robo3t-1.4)  la ruta de la b
 
 ***
 ### Estructura proyecto
-***
+
          ├───app_servidor
             |    |
             |    ├───Usuario 
@@ -77,8 +77,7 @@ su estructura y manipularlo, he utilizado un O.D.M (Robo3t-1.4)  la ruta de la b
                 └──Modelo
 
                
-  ***
-    Schemas 
+
   ***
   ####  Esquema Usuario:
  ```
