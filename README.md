@@ -1,22 +1,29 @@
-# Reto-Backend-Movies.-API
-
-
-# API simple de backend netflix :
+# Reto-Backend-API-Movies 🚀
 ***
-    Elaboracion de una API, con practicas Rest FULL y usando base datos local, Node.js, Express,Mongo y Postaman para el testeo
-de la misma. 
+Elaboracion de una API, que simula los principios de NETFLIX donde un usuario tiene un conjunto de peliculas y puede alquilarlas por un tiempo determinado, la API tiene arquitectura RestFULL y está desarrollada con las siguientes tecngologías:
+
+  * Node.js: Entorno de ejecución multiplataforma  
+  * NPM: Sistema de gestión de paquetes por defecto de Node.js
+  * Express: Frameworks
+  * MongoDB: Base de datos NoSql 
+  * Moongose: ODM 
+  * Postaman: Testear Api
+  
+  ***
+## Pre-requisitos de uso 📋
+
+* Backend : Descarga e instale Node.js, luego para la base de datos he descargado e instalado mongoDB, para visualizar
+su estructura y manipularlo, he utilizado un O.D.M (Robo3t-1.4)  la ruta de la base de datos es:
+
+ `'mongodb://localhost:27017/backend_netflix'`
+
+* Puerto: El puerto por defecto es 3000, sin embargo he utilizado variables de entorno para ajustar el puerto para cada ambiente de trabajo. 
+
+* Jwt secret: Para definir la clave secrete para generar el Token, debemos ajustarla en las variables de entorno en el campo TOKEN.
+
 ***
-## Introducción
 
-* Backend : Descarga e intalación de Node.js, luego para hacer la base de datos he descargado e instalado mongoDB y para visualizar
-su estructura y manipularlo, he utilizado un O.D.M (Robo3t-1.4)  la URL de la base de datos es:  `'mongodb://localhost:27017/backend_netflix'`
-
-* Puerto: se ha utilizado el puerto 3000, simplemente se debe ajustar en las variables de entorno ese valor. 
-
-* Jwt secret: al igual que el puerto, hay que definir la clave en las variables de entorno en el campo TOKEN.
-
-***
-Estrutura de carpetas
+## Estrutura de carpetas
 ***
             ├───Api_servidor
             ├───Usuario 
@@ -35,7 +42,7 @@ Estrutura de carpetas
 ***
 ## Autenticación
 ***
- ### La autenticación ha sido posible a dos librerias: 
+ Para la Autenticación del usuario, he utilizado dos librerias: 
     
 * Bcrypt: Es una librería que permite aumentar la privacidad y la seguridad ya que puedes convetir la contraseña de texto plano
     a un hash, y así el usuario queda más protegido de cara a un ataque a la base de datos. 
@@ -44,7 +51,7 @@ Estrutura de carpetas
     funciona como una "llave" para acceder a las distintas rutas de las APP. 
 
 ***
-### Endpoints
+### Estructura proyecto
 ***
          ├───app_servidor
             |    |
